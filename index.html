@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xenetr0n | vkmef</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            color: #fff;
+            font-family: 'Courier New', monospace;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        #splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 1000;
+            cursor: pointer;
+        }
+
+        #splash-screen h1 {
+            color: #fff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0af, 0 0 40px #0af;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            animation: pulse 2s infinite;
+        }
+
+        #splash-screen p {
+            color: #fff;
+            text-shadow: 0 0 5px #fff;
+            font-size: 1.2rem;
+            text-align: center;
+        }
+
+        #content {
+            display: none;
+            padding: 2rem;
+            position: relative;
+            z-index: 10;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2rem;
+            padding: 1rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 15px #fff, 0 0 25px #0af;
+            margin-right: 2rem;
+            object-fit: cover;
+        }
+
+        .profile-info h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+        }
+
+        .profile-info p {
+            font-size: 1.2rem;
+            text-shadow: 0 0 5px #fff;
+            margin-bottom: 0.5rem;
+        }
+
+        .content-block {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.1);
+        }
+
+        .content-block h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 10px #fff, 0 0 20px #0af;
+            color: #fff;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            line-height: 1.4;
+            text-shadow: 0 0 5px #fff;
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: #0af;
+            text-decoration: none;
+            text-shadow: 0 0 5px #0af;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #fff;
+            text-shadow: 0 0 10px #fff, 0 0 20px #0af;
+        }
+
+        .link-list {
+            list-style-type: none;
+        }
+
+        .link-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.8; }
+            50% { opacity: 1; }
+            100% { opacity: 0.8; }
+        }
+
+        @media (max-width: 768px) {
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .profile-image {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+            
+            pre {
+                font-size: 0.8rem;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="splash-screen">
+        <h1>👁 xenetr0n | vkmef 👁</h1>
+        <p>Нажмите на экран или нажмите Enter</p>
+    </div>
+
+    <div id="content">
+        <div class="profile-header">
+            <img src="photo.png" alt="Profile Photo" class="profile-image">
+            <div class="profile-info">
+                <h1>xenetr0n / vkmef</h1>
+                <p>CEO Dark Arm Team | Бывший участник xss.is</p>
+                <p>Кибербезопасность · Разработка · Исследования</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <pre>
+██████╗         
+╚════██╗        
+  ▄███╔╝        
+  ▀▀══╝         
+  ██╗           
+  ╚═╝           
+            </pre>
+        </div>
+
+        <div class="content-block">
+            <h2>Telegram проекты</h2>
+            <ul class="link-list">
+                <li>👾 <b>T - Project Link's</b>
+                    <ul class="link-list">
+                        <li>├ T - Tools — <a href="https://t.me/+44tu-RC8_BUzYjQy" target="_blank">Join</a></li>
+                        <li>├ T - Manuals — <a href="https://t.me/+w6ylfaUtWlUwYzQ6" target="_blank">Join</a></li>
+                        <li>└ T - Database — <a href="https://t.me/+3srREHLIMWNmNWIy" target="_blank">Join</a></li>
+                    </ul>
+                </li>
+                <li>👾 <b>Killnet Link's</b>
+                    <ul class="link-list">
+                        <li>├ Channel — <a href="https://t.me/WeAreKillnet_Channel" target="_blank">Join</a></li>
+                        <li>└ Support — <a href="https://t.me/WeAreKillnet_Support" target="_blank">click</a></li>
+                    </ul>
+                </li>
+                <li>👾 <b>UserSec Link's</b>
+                    <ul class="link-list">
+                        <li>├ Channel — <a href="https://t.me/usersecc" target="_blank">Join</a></li>
+                        <li>└ Chat — <a href="https://t.me/usersec_chatt" target="_blank">join</a></li>
+                    </ul>
+                </li>
+                <li>👾 <b>Thread Link's</b>
+                    <ul class="link-list">
+                        <li>├ Cannel — <a href="https://t.me/thread_invite" target="_blank">Join</a></li>
+                        <li>└ Thread Staff — <a href="https://t.me/staff_thread_bot" target="_blank">Start</a></li>
+                    </ul>
+                </li>
+                <li>👾 <b>EvilWeb Link's</b>
+                    <ul class="link-list">
+                        <li>├ Channel — <a href="https://t.me/EvilWeb_official" target="_blank">Join</a></li>
+                        <li>└ Support — <a href="https://t.me/EvilWeb_support" target="_blank">click</a></li>
+                    </ul>
+                </li>
+                <li>👾 <b>VX Underground Link</b>
+                    <ul class="link-list">
+                        <li>└ Link — <a href="https://vx-underground.org/" target="_blank">click</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <div class="content-block">
+            <h2>Даркнет площадки</h2>
+            <pre>
+Market's
+├─ Deep Market: <a href="http://deepmar4ai3iff7akeuos3u3727lvuutm4l5takh3dmo3pziznl5ywqd.onion/" target="_blank">http://deepmar4ai3iff7akeuos3u3727lvuutm4l5takh3dmo3pziznl5ywqd.onion/</a>
+├─ DrChronic: <a href="http://iwggpyxn6qv3b2twpwtyhi2sfvgnby2albbcotcysd5f7obrlwbdbkyd.onion/" target="_blank">http://iwggpyxn6qv3b2twpwtyhi2sfvgnby2albbcotcysd5f7obrlwbdbkyd.onion/</a>
+├─ TomAndJerry: <a href="http://rfyb5tlhiqtiavwhikdlvb3fumxgqwtg2naanxtiqibidqlox5vispqd.onion/" target="_blank">http://rfyb5tlhiqtiavwhikdlvb3fumxgqwtg2naanxtiqibidqlox5vispqd.onion/</a>
+├─ 420prime: <a href="http://ajlu6mrc7lwulwakojrgvvtarotvkvxqosb4psxljgobjhureve4kdqd.onion/" target="_blank">http://ajlu6mrc7lwulwakojrgvvtarotvkvxqosb4psxljgobjhureve4kdqd.onion/</a>
+├─ DeDope: <a href="http://sga5n7zx6qjty7uwvkxpwstyoh73shst6mx3okouv53uks7ks47msayd.onion/" target="_blank">http://sga5n7zx6qjty7uwvkxpwstyoh73shst6mx3okouv53uks7ks47msayd.onion/</a>
+├─ AccMarket: <a href="http://55niksbd22qqaedkw36qw4cpofmbxdtbwonxam7ov2ga62zqbhgty3yd.onion/" target="_blank">http://55niksbd22qqaedkw36qw4cpofmbxdtbwonxam7ov2ga62zqbhgty3yd.onion/</a>
+├─ Cardshop: <a href="http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion/" target="_blank">http://s57divisqlcjtsyutxjz2ww77vlbwpxgodtijcsrgsuts4js5hnxkhqd.onion/</a>
+├─ Darkmining: <a href="http://jbtb75gqlr57qurikzy2bxxjftzkmanynesmoxbzzcp7qf5t46u7ekqd.onion/" target="_blank">http://jbtb75gqlr57qurikzy2bxxjftzkmanynesmoxbzzcp7qf5t46u7ekqd.onion/</a>
+├─ MobileStore: <a href="http://rxmyl3izgquew65nicavsk6loyyblztng6puq42firpvbe32sefvnbad.onion/" target="_blank">http://rxmyl3izgquew65nicavsk6loyyblztng6puq42firpvbe32sefvnbad.onion/</a>
+├─ EuroGuns: <a href="http://t43fsf65omvf7grt46wlt2eo5jbj3hafyvbdb7jtr2biyre5v24pebad.onion/" target="_blank">http://t43fsf65omvf7grt46wlt2eo5jbj3hafyvbdb7jtr2biyre5v24pebad.onion/</a>
+├─ UKpassports: <a href="http://3bp7szl6ehbrnitmbyxzvcm3ieu7ba2kys64oecf4g2b65mcgbafzgqd.onion/" target="_blank">http://3bp7szl6ehbrnitmbyxzvcm3ieu7ba2kys64oecf4g2b65mcgbafzgqd.onion/</a>
+├─ ccPal: <a href="http://xykxv6fmblogxgmzjm5wt6akdhm4wewiarjzcngev4tupgjlyugmc7qd.onion/" target="_blank">http://xykxv6fmblogxgmzjm5wt6akdhm4wewiarjzcngev4tupgjlyugmc7qd.onion/</a>
+├─ Webuybitcoins: <a href="http://wk3mtlvp2ej64nuytqm3mjrm6gpulix623abum6ewp64444oreysz7qd.onion/" target="_blank">http://wk3mtlvp2ej64nuytqm3mjrm6gpulix623abum6ewp64444oreysz7qd.onion/</a>
+├─ ASAP Market
+│   ├─ ASAP Market 1: <a href="http://asap4u7rq4tyakf5gdahmj2c77blwc4noxnsppp5lzlhk7x34x2e22yd.onion/" target="_blank">http://asap4u7rq4tyakf5gdahmj2c77blwc4noxnsppp5lzlhk7x34x2e22yd.onion/</a>
+│   ├─ ASAP Market 2: <a href="http://asap2u4pvplnkzl7ecle45wajojnftja45wvovl3jrvhangeyq67ziid.onion/" target="_blank">http://asap2u4pvplnkzl7ecle45wajojnftja45wvovl3jrvhangeyq67ziid.onion/</a>
+│   └─ ASAP Market 3: <a href="http://asap4u2ihsunfdsumm66pmado3mt3lemdiu3fbx5b7wj5hb3xpgmwkqd.onion/" target="_blank">http://asap4u2ihsunfdsumm66pmado3mt3lemdiu3fbx5b7wj5hb3xpgmwkqd.onion/</a>
+├─ Cannahome
+│   ├─ Cannahome 1: <a href="http://cannabmgae3mkekotfzsyrx5lqg7lj7hgcn6t4rumqqs5vnvmuzsmfqd.onion/" target="_blank">http://cannabmgae3mkekotfzsyrx5lqg7lj7hgcn6t4rumqqs5vnvmuzsmfqd.onion/</a>
+│   ├─ Cannahome 2: <a href="http://cannaczy4w2nwu6d2vi5ugudrs23a4lpto2crxjl2tdvyxncsa7uwaid.onion/" target="_blank">http://cannaczy4w2nwu6d2vi5ugudrs23a4lpto2crxjl2tdvyxncsa7uwaid.onion/</a>
+│   └─ Cannahome 3: <a href="http://cannabmuc64fbglolpkvnmqynsx226pg27rgimfe3gye3emgtgodohqd.onion/" target="_blank">http://cannabmuc64fbglolpkvnmqynsx226pg27rgimfe3gye3emgtgodohqd.onion/</a>
+├─ Hydra: <a href="http://hydraclubbioknikokex7njhwuahc2l67lfiz7z36md2jvopda7nchid.onion/" target="_blank">http://hydraclubbioknikokex7njhwuahc2l67lfiz7z36md2jvopda7nchid.onion/</a>
+├─ The Versus Project: <a href="http://pqqmr3p3tppwqvvapi6fa7jowrehgd36ct6lzr26qqormaqvh6gt4jyd.onion/" target="_blank">http://pqqmr3p3tppwqvvapi6fa7jowrehgd36ct6lzr26qqormaqvh6gt4jyd.onion/</a>
+├─ Tor Market: <a href="http://rrlm2f22lpqgfhyydqkxxzv6snwo5qvc2krjt2q557l7z4te7fsvhbid.onion/" target="_blank">http://rrlm2f22lpqgfhyydqkxxzv6snwo5qvc2krjt2q557l7z4te7fsvhbid.onion/</a>
+├─ Drug Stores
+│   ├─ DCdutchconnectionUK: <a href="http://wbz2lrxhw4dd7h5t2wnoczmcz5snjpym4pr7dzjmah4vi6yywn37bdyd.onion/" target="_blank">http://wbz2lrxhw4dd7h5t2wnoczmcz5snjpym4pr7dzjmah4vi6yywn37bdyd.onion/</a>
+│   ├─ CanabisUK: <a href="http://7mejofwihleuugda5kfnr7tupvfbaqntjqnfxc4hwmozlcmj2cey3hqd.onion/" target="_blank">http://7mejofwihleuugda5kfnr7tupvfbaqntjqnfxc4hwmozlcmj2cey3hqd.onion/</a>
+│   ├─ Bitpharma: <a href="http://guzjgkpodzshso2nohspxijzk5jgoaxzqioa7vzy6qdmwpz3hq4mwfid.onion/" target="_blank">http://guzjgkpodzshso2nohspxijzk5jgoaxzqioa7vzy6qdmwpz3hq4mwfid.onion/</a>
+│   ├─ EuCanna: <a href="http://n6qisfgjauj365pxccpr5vizmtb5iavqaug7m7e4ewkxuygk5iim6yyd.onion/" target="_blank">http://n6qisfgjauj365pxccpr5vizmtb5iavqaug7m7e4ewkxuygk5iim6yyd.onion/</a>
+│   ├─ Smokeables: <a href="http://kl4gp72mdxp3uelicjjslqnpomqfr5cbdd3wzo5klo3rjlqjtzhaymqd.onion/" target="_blank">http://kl4gp72mdxp3uelicjjslqnpomqfr5cbdd3wzo5klo3rjlqjtzhaymqd.onion/</a>
+│   └─ WeedShop: <a href="http://marijuanaman43fi4t7el66di7vdpbfyhvkgk4mt7wxkg6erfkv65npy3d.onion/" target="_blank">http://marijuanaman43fi4t7el66di7vdpbfyhvkgk4mt7wxkg6erfkv65npy3d.onion/</a>
+├─ Cartel: <a href="http://7myb7itqew5ffqftvxjh2k7qxwrh7imavxlpn3fxa32d3rvw32e3s7ad.onion/" target="_blank">http://7myb7itqew5ffqftvxjh2k7qxwrh7imavxlpn3fxa32d3rvw32e3s7ad.onion/</a>
+└─ Kingdom Market: <a href="http://hdfozcnzivftjokvkdjzl6fhq3c7ltyct6db4efov2w4p7xb6rmhlfqd.onion/" target="_blank">http://hdfozcnzivftjokvkdjzl6fhq3c7ltyct6db4efov2w4p7xb6rmhlfqd.onion/</a>
+            </pre>
+        </div>
+    </div>
+
+    <canvas id="canvas"></canvas>
+
+    <audio id="music" loop>
+        <source src="music.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Обработка splash screen
+        document.addEventListener('DOMContentLoaded', function() {
+            const splashScreen = document.getElementById('splash-screen');
+            const content = document.getElementById('content');
+            const music = document.getElementById('music');
+            
+            function showContent() {
+                splashScreen.style.display = 'none';
+                content.style.display = 'block';
+                
+                // Попытка воспроизведения музыки
+                music.play().catch(error => {
+                    console.log('Автовоспроизведение заблокировано. Пользователь должен взаимодействовать со страницей.');
+                });
+            }
+            
+            splashScreen.addEventListener('click', showContent);
+            
+            document.addEventListener('keydown', function(event) {
+                if (event.key === 'Enter') {
+                    showContent();
+                }
+            });
+        });
+
+        // Эффект паутинки
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('canvas');
+            const ctx = canvas.getContext('2d');
+            
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            
+            let particlesArray = [];
+            const numberOfParticles = 50;
+            
+            const mouse = {
+                x: null,
+                y: null,
+                radius: 150
+            };
+            
+            window.addEventListener('mousemove', function(event) {
+                mouse.x = event.x;
+                mouse.y = event.y;
+            });
+            
+            window.addEventListener('resize', function() {
+                canvas.width = window.innerWidth;
+                canvas.height = window.innerHeight;
+            });
+            
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = Math.random() * 2 - 1;
+                    this.speedY = Math.random() * 2 - 1;
+                }
+                
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+                    
+                    if (this.x > canvas.width || this.x < 0) {
+                        this.speedX = -this.speedX;
+                    }
+                    if (this.y > canvas.height || this.y < 0) {
+                        this.speedY = -this.speedY;
+                    }
+                    
+                    // Проверка расстояния до курсора
+                    const dx = mouse.x - this.x;
+                    const dy = mouse.y - this.y;
+                    const distance = Math.sqrt(dx * dx + dy * dy);
+                    
+                    if (distance < mouse.radius) {
+                        this.speedX = dx * 0.03;
+                        this.speedY = dy * 0.03;
+                    }
+                }
+                
+                draw() {
+                    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.closePath();
+                    ctx.fill();
+                }
+            }
+            
+            function init() {
+                particlesArray = [];
+                for (let i = 0; i < numberOfParticles; i++) {
+                    particlesArray.push(new Particle());
+                }
+            }
+            
+            function connect() {
+                for (let a = 0; a < particlesArray.length; a++) {
+                    for (let b = a; b < particlesArray.length; b++) {
+                        const dx = particlesArray[a].x - particlesArray[b].x;
+                        const dy = particlesArray[a].y - particlesArray[b].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        
+                        if (distance < 150) {
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${1 - distance/150})`;
+                            ctx.lineWidth = 1;
+                            ctx.beginPath();
+                            ctx.moveTo(particlesArray[a].x, particlesArray[a].y);
+                            ctx.lineTo(particlesArray[b].x, particlesArray[b].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+            
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                for (let i = 0; i < particlesArray.length; i++) {
+                    particlesArray[i].update();
+                    particlesArray[i].draw();
+                }
+                
+                connect();
+                requestAnimationFrame(animate);
+            }
+            
+            init();
+            animate();
+        });
+    </script>
+</body>
+</html>
